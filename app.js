@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
@@ -107,4 +108,5 @@ app.post(
   })
 );
 
-app.listen(3000, () => console.log("app listening on port 3000!"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`app listening on port ${PORT}`));
